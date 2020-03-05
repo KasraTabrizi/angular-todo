@@ -1,0 +1,13 @@
+<input [(ngModel)]="task">
+<button (click)="addTask()">Add</button>
+
+
+<ul *ngFor="let task of taskList">
+    <li>
+        <div><span [style.text-decoration]="task.checkValue">{{task.name}}</span></div>
+        <div>
+            <button (click)="checkTask(task.id)">{{task.checkButtonState}}</button>
+            <button (click)="deleteTask(task.id)">delete</button>
+        </div>
+    </li>
+</ul>
